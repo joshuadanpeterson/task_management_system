@@ -71,7 +71,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'task_management_system.wsgi.application'
 
 
-# Database
+# Database settings for PostgreSQL with Docker
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
