@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path, # re_path, include
+from django.urls import path  #, re_path, include
 from app import views  # Assuming your app's name is 'app'
 from django.contrib.auth import views as auth_views  # Import built-in authentication views
 
