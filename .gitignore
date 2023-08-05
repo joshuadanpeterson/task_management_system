@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Django specific
+db.sqlite3
+
+# Virtual environment
+venv/
+
+# macOS
+.DS_Store
+
+# Unnecessary files/folders
+er_diagram/
+zip_folders/
+
+# Backup files or system generated files
+*.bak
+*~
+
+# Other common files to ignore
+*.log
+*.tmp
+*.swp
+*.egg-info
+dist/
+build/
+
+# Database
+*.sqlite3
+*.db
