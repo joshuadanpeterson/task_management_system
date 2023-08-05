@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path, re_path, include
+from django.urls import path, # re_path, include
 from app import views  # Assuming your app's name is 'app'
 from django.contrib.auth import views as auth_views  # Import built-in authentication views
 
@@ -23,5 +23,5 @@ urlpatterns = [
     path('tasks/<int:task_id>/edit/', views.task_edit, name='task_edit'),
     path('tasks/<int:task_id>/delete/', views.task_delete, name='task_delete'),
 
-    re_path(r'^$', include('app.urls')),  # This will include all URLs from the 'app' at the root
+    # re_path(r'^$', include('app.urls')),  # This will include all URLs from the 'app' at the root
 ]
