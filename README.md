@@ -1,37 +1,50 @@
 
 # Portfolio Project: Task Management System
 
-This project represents a simple task management system where users can create, view, edit, and delete tasks. The primary goal of this project is to demonstrate a working knowledge of modern software engineering principles with a focus on DevOps practices.
+## Project Description
 
-## Project Requirements
+This project is a Task Management System developed as a part of the "Modern Software Engineering with DevOps" course. It is designed to allow users to manage tasks effectively by adding, updating, deleting, and viewing them. Additionally, it provides user authentication features like registration, login, and logout. 
 
-- Users should be able to register, log in, and log out.
-- Only authenticated users should be able to create, view, edit, or delete tasks.
-- Tasks should have a title, description, creation date, and completion date.
-- The system should be deployed in a containerized environment using Docker.
-- The system should implement CI/CD practices using GitHub actions.
+The application is built using the Django framework, ensuring a robust backend. The frontend relies on Django's templating engine, providing an intuitive user interface that interacts with the Django models and views.
+
+## Installation
+
+To set up and run the project:
+
+1. Clone the repository from GitHub.
+2. Navigate to the project directory.
+3. Install the required dependencies using pip:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. Run the Django migrations to set up the database:
+
+    ```bash
+    python manage.py migrate
+    ```
+
+5. Start the Django development server:
+
+    ```bash
+    python manage.py runserver
+    ```
+
+6. Visit `http://127.0.0.1:8000/` in your web browser.
 
 ## Technologies Used
 
-- **Django**: A high-level Python Web framework that encourages rapid development and clean, pragmatic design.
-- **PostgreSQL**: An open-source relational database.
-- **Docker**: A platform to develop, ship, and run applications inside containers.
-- **GitHub Actions**: A platform for CI/CD and other workflows.
+- Django: A high-level Python web framework that encourages rapid development and clean, pragmatic design.
+- SQLite: A C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine.
+- Python: A versatile programming language, used as the backbone for development.
 
-## Installation Instructions
+## Project Metadata
 
-1. Clone the repository.
-2. Navigate to the project directory.
-3. Use Docker Compose to build and run the project:
-    ```bash
-    docker compose build
-    docker compose up
-    ```
-4. Access the application in your browser at `http://localhost:8000`.
-
----
-
-**Bootcamp**        | Nucamp                                       
-**Course Name**     | Modern Software Engineering with DevOps         
-**Project Name**    | Portfolio Project: Task Management System        
-**Due Date**        | August 19, 2023                                  
+| Title  | Details |
+|-----------------|-----------------------------------------------------|
+| Bootcamp        | Nucamp                                              |
+| Course Name     | Modern Software Engineering with DevOps            |
+| Project Name    | Portfolio Project: Task Management System          |
+| Project Author    | Josh Peterson |
+| Date Due        | August 19, 2023                                     |
