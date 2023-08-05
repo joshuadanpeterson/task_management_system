@@ -14,12 +14,11 @@ def user_login(request):
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('some_success_url')
-        else:
+        if user is None:
             # Return an 'invalid login' error message.
             return render(request, 'login.html', {'error': 'Invalid login credentials'})
+        login(request, user)
+        return redirect('some_success_url')
     return render(request, 'login.html')
 
 # New view for user signup
@@ -33,6 +32,11 @@ def signup_view(request):
     else:
         form = CustomUserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
+
+
+# The function `landing_page` renders the landing page for the application.
+def landing_page(request):
+    return render(request, 'homepage/landing.html')
 
 @login_required
 def task_list(request):
