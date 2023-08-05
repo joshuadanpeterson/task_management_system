@@ -15,11 +15,11 @@ urlpatterns = [
     # User logout view
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 
-    # Add paths for CRUD operations on tasks if you have views defined for them
+    # CRUD operations on tasks
     # e.g., 
-    # path('tasks/', views.task_list, name='task_list'),
-    # path('tasks/create/', views.task_create, name='task_create'),
-    # path('tasks/<int:task_id>/', views.task_detail, name='task_detail'),
-    # path('tasks/<int:task_id>/edit/', views.task_edit, name='task_edit'),
-    # path('tasks/<int:task_id>/delete/', views.task_delete, name='task_delete'),
+    path('tasks/', views.task_list, name='task_list'),
+    path('tasks/create/', views.task_create, name='task_create'),
+    path('tasks/<int:task_id>/', views.task_detail, name='task_detail'),
+    path('tasks/<int:task_id>/edit/', views.task_edit, name='task_edit'),
+    path('tasks/<int:task_id>/delete/', views.task_delete, name='task_delete'),
 ]
