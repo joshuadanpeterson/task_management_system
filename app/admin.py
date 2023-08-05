@@ -19,6 +19,7 @@ class CustomUserAdmin(UserAdmin):
     search_fields = ('username',)
     ordering = ('username',)
 
+# Unregister the built-in User model from the admin interface and register the CustomUserAdmin class instead.
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
 

@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from app.models import Task
 from app.forms import CustomUserCreationForm, TaskForm
 
+# This is the view for the login page. It will authenticate the user and log them in if the credentials are correct.
 def user_login(request):
     """
     The function `user_login` handles user login requests, authenticates the user, and redirects to a
@@ -38,11 +39,13 @@ def signup_view(request):
 def landing_page(request):
     return render(request, 'homepage/landing.html')
 
+# The function 'task_list' renders the task list for the application.
 @login_required
 def task_list(request):
     tasks = Task.objects.filter(user=request.user)
     return render(request, 'tasks/task_list.html', {'tasks': tasks})
 
+# The function `task_create` renders the task creation form and handles the creation of tasks.
 @login_required
 def task_create(request):
     if request.method == 'POST':
@@ -56,11 +59,13 @@ def task_create(request):
         form = TaskForm()
     return render(request, 'tasks/task_form.html', {'form': form})
 
+# The function `task_detail` renders the task detail page for the application.
 @login_required
 def task_detail(request, task_id):
     task = get_object_or_404(Task, id=task_id)
     return render(request, 'tasks/task_detail.html', {'task': task})
 
+# The function `task_edit` renders the task edit page for the application.
 @login_required
 def task_edit(request, task_id):
     task = get_object_or_404(Task, id=task_id)
@@ -73,6 +78,7 @@ def task_edit(request, task_id):
         form = TaskForm(instance=task)
     return render(request, 'tasks/task_form.html', {'form': form, 'task': task})
 
+# The function `task_delete` renders the task delete page for the application.
 @login_required
 def task_delete(request, task_id):
     task = get_object_or_404(Task, id=task_id)
