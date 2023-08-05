@@ -38,7 +38,7 @@ The application should now be accessible at `http://localhost:8000/`.
 
 ## Key Project Details
 
-|             |                                  |
+|   Title     |               Details            |
 |-------------|----------------------------------|
 | Bootcamp    | Nucamp                           |
 | Course      | Modern Software Engineering with DevOps |
