@@ -30,6 +30,7 @@ cd path_to_directory
 
 3. Use Docker Compose to build and run the application:
 ```bash
+docker-compose build
 docker-compose up -d
 ```
 
