@@ -5,6 +5,9 @@ from django.contrib.auth import views as auth_views  # Import built-in authentic
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # Landing page
+    path('', views.landing_page, name='landing_page'),
     
     # User registration or signup view
     path('signup/', views.signup_view, name='signup'),
