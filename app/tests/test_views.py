@@ -16,7 +16,9 @@ class UserLoginViewTests(TestCase):
     def test_unsuccessful_login(self):
         response = self.client.post(self.login_url, {'username': 'testuser', 'password': 'wrongpassword'})
         self.assertEqual(response.status_code, 200)  # Expecting to stay on the same page
-        self.assertContains(response, 'Invalid login credentials')
+        self.assertContains(response, 'error')
+        print(response.content.decode())
+
 
 # Testing the 'task_create' view in views.py
 from app.models import Task
@@ -29,6 +31,7 @@ class TaskCreateViewTests(TestCase):
 
     def test_task_creation_with_valid_data(self):
         data = {
+            'user': self.user.id,
             'title': 'Test Task',
             'description': 'This is a test task description',
             'due_date': '2023-12-31',

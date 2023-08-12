@@ -19,7 +19,7 @@ def user_login(request):
             # Return an 'invalid login' error message.
             return render(request, 'login.html', {'error': 'Invalid login credentials'})
         login(request, user)
-        return redirect('some_success_url')
+        return redirect('task_list')
     return render(request, 'login.html')
 
 # New view for user signup

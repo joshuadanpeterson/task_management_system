@@ -131,3 +131,8 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Fix Successful Login Test
+# https://stackoverflow.com/questions/63194936/django-3-1-1-unit-test-fails-with-assertionerror-404-not-found-not-logged-in
+LOGIN_REDIRECT_URL = 'task_list'
+
