@@ -25,6 +25,7 @@ zip_folders/
 *.tmp
 *.swp
 *.egg-info
+*.env
 dist/
 build/
 
