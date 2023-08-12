@@ -7,3 +7,4 @@ docker==5.0.0
 docker-compose==1.29.2
 pytest==6.2.4
 pytest-django==4.4.0
+pytest-factoryboy==2.5.1

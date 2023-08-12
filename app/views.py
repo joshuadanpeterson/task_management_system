@@ -57,6 +57,7 @@ def task_create(request):
             return redirect('task_list')
     else:
         form = TaskForm()
+    print(form.errors)
     return render(request, 'tasks/task_form.html', {'form': form})
 
 # The function `task_detail` renders the task detail page for the application.
