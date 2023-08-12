@@ -10,7 +10,7 @@ The Task Management System is a web application that allows users to manage, tra
 - **Python**: The main programming language used for developing this application.
 - **Django**: A high-level Python Web framework that enables rapid development of secure and maintainable websites.
 - **Django ORM**: Provides a way to define and manipulate databases in Python code, rather than using SQL.
-- **SQLite**: The default database used by Django for lightweight development.
+- **PostgreSQL**: The database used by this project.
 - **Docker**: A platform used to develop, ship, and run applications inside containers.
 - **HTML**: Markup language for creating web pages.
 
