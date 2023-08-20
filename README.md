@@ -21,7 +21,7 @@ To run the Task Management System, you should have both Docker and Docker Compos
 1. Clone the GitHub repository:
 ```bash
 git clone https://github.com/joshuadanpeterson/task_management_system.git
-****```
+```
 
 2. Navigate to the project directory:
 ```bash
