@@ -7,6 +7,7 @@
     <h1>{{ task.title }}</h1>
     <p>Description: {{ task.description }}</p>
     <p>Due Date: {{ task.due_date }}</p>
+    <p>Due Time: {{ task.due_time }}</p>
     <p>Status: {{ task.status }}</p>
     <a href="{% url 'task_edit' task.id %}" class="btn btn-edit">Edit Task</a>
     <a href="{% url 'task_delete' task.id %}" class="btn btn-delete">Delete Task</a>
