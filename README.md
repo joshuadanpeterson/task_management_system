@@ -13,6 +13,7 @@ The Task Management System is a web application that allows users to manage, tra
 - **PostgreSQL**: The database used by this project.
 - **Docker**: A platform used to develop, ship, and run applications inside containers.
 - **HTML**: Markup language for creating web pages.
+- **CSS**: Style sheet language for stylizing web pages.
 
 ## Installation & Setup
 
