@@ -76,16 +76,22 @@ WSGI_APPLICATION = 'task_management_system.wsgi.application'
 # Database settings for PostgreSQL with Docker
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+if os.environ.get('USE_DOCKER', 'no') == 'yes':
+    db_host = 'db'  # Docker container name
+else:
+    db_host = 'localhost'  # Or the correct address for local PostgreSQL
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': config('DB_NAME'),
         'USER': config('DB_USER'),
         'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST', default='db'),
+        'HOST': config('DB_HOST', default=db_host),
         'PORT': config('DB_PORT', default='5432'),
     }
 }
+
 
 
 
