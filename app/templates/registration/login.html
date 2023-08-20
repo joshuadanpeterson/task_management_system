@@ -1,3 +1,4 @@
+<!-- Login Template -->
 {% extends "base/base.html" %}
 
 {% block title %}Login - Task Management System{% endblock %}
@@ -17,8 +18,7 @@
     {% endif %}
 
     <div class="login-links">
-        <a href="{% url 'signup' %}">Create an account</a> |
-        <a href="{% url 'password_reset' %}">Forgot your password?</a>
+        <a href="{% url 'signup' %}">Create an account</a>
     </div>
   </div>
 {% endblock %}

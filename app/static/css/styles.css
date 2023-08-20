@@ -97,3 +97,45 @@ footer {
     margin-top: 15px;
   }
   
+/* Tasks CSS */
+
+.delete-container,
+.task-detail-container,
+.task-form-container,
+.task-list-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.btn {
+  padding: 10px 15px;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.btn-edit {
+  background-color: #f0ad4e;
+  color: #fff;
+}
+
+.btn-delete {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.btn-cancel,
+.btn-create,
+.btn-submit {
+  background-color: #5bc0de;
+  color: #fff;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  margin: 10px 0;
+}

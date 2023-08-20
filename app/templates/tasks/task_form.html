@@ -1,0 +1,15 @@
+<!-- task_form Template -->
+{% extends "base/base.html" %}
+
+{% block title %}{% if task %}Edit Task{% else %}Create Task{% endif %}{% endblock %}
+{% block content %}
+  <div class="task-form-container">
+    <h1>{% if task %}Edit Task{% else %}Create Task{% endif %}</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-submit">{% if task %}Update{% else %}Create{% endif %}</button>
+    </form>
+  </div>
+{% endblock %}
+

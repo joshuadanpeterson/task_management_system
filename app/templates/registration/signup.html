@@ -1,6 +1,18 @@
 <!-- Signup Template -->
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Register</button>
-</form>
+{% extends "base/base.html" %}
+
+{% block title %}Sign Up - Task Management System{% endblock %}
+{% block content %}
+  <div class="signup-container">
+    <h1>Create an Account</h1>
+    <form method="post" class="signup-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-signup">Register</button>
+    </form>
+
+    <div class="signup-links">
+        <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+    </div>
+  </div>
+{% endblock %}

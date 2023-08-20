@@ -1,0 +1,14 @@
+<!-- task_detail Template -->
+{% extends "base/base.html" %}
+
+{% block title %}Task Details{% endblock %}
+{% block content %}
+  <div class="task-detail-container">
+    <h1>{{ task.title }}</h1>
+    <p>Description: {{ task.description }}</p>
+    <p>Due Date: {{ task.due_date }}</p>
+    <p>Status: {{ task.status }}</p>
+    <a href="{% url 'task_edit' task.id %}" class="btn btn-edit">Edit Task</a>
+    <a href="{% url 'task_delete' task.id %}" class="btn btn-delete">Delete Task</a>
+  </div>
+{% endblock %}
