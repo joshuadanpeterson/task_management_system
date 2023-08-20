@@ -14,4 +14,4 @@ class CustomUserCreationForm(UserCreationForm):
 class TaskForm(forms.ModelForm):
     class Meta:
         model = Task
-        fields = ['user', 'title', 'description', 'due_date', 'due_time', 'status']
+        fields = ['title', 'description', 'due_date', 'due_time', 'status']
