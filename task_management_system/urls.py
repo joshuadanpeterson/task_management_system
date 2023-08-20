@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path  #, re_path, include
 from app import views  # Assuming your app's name is 'app'
+from app.views import user_logout, landing_page
 from django.contrib.auth import views as auth_views  # Import built-in authentication views
 
 urlpatterns = [
@@ -16,7 +17,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
     
     # User logout view
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('logout/', user_logout, name='logout'),
 
     # Password reset views
     # path('password_reset/', auth_views.PasswordResetView.as_view(), name='password_reset'),

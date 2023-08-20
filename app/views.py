@@ -22,6 +22,11 @@ def user_login(request):
         return redirect('task_list')
     return render(request, 'login.html')
 
+# This is the view for the logout page. It will log the user out and redirect them to the landing page.
+def user_logout(request):
+    logout(request)
+    return redirect('landing_page')  # Replace 'landing_page' with the name of your homepage URL pattern
+
 # New view for user signup
 def signup_view(request):
     if request.method == 'POST':
