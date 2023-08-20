@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Default Title{% endblock %}</title>
+    <title>{% block title %}Task Management System{% endblock %}</title>
     <!-- Add your stylesheets here -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     {% block extra_css %}{% endblock %}
@@ -13,8 +13,16 @@
 <body>
     <header>
         <nav>
-            <!-- Navigation links can go here -->
             <a href="{% url 'landing_page' %}">Home</a>
+            <!-- Show these links to authenticated users -->
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">Logout</a>
+                <a href="{% url 'task_list' %}">My Tasks</a>
+            <!-- Show these links to non-authenticated users -->
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'signup' %}">Signup</a>
+            {% endif %}
             <!-- More nav links can be added as needed -->
         </nav>
     </header>

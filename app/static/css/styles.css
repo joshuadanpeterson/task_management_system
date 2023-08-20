@@ -1,0 +1,99 @@
+/* base.html CSS */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+nav a {
+    margin: 10px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+}
+
+/* landing.html CSS */
+
+.landing-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .landing-image {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .cta-buttons {
+    margin: 20px 0;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+  }
+  
+  .btn-login {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  
+  .btn-signup {
+    background-color: #28a745;
+    color: #ffffff;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .feature {
+    width: 30%;
+    min-width: 200px;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .feature img {
+    width: 50px;
+  }
+  
+  .footer {
+    text-align: center;
+  }
+  
+/* login.html CSS */
+
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-form {
+    margin-bottom: 15px;
+  }
+  
+  .login-links {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .alert {
+    padding: 10px;
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    border-radius: 4px;
+    margin-top: 15px;
+  }
+  

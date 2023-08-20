@@ -1,9 +1,32 @@
 {% extends "base/base.html" %}
 
-<!-- This is the home page for the Task Management System -->
 {% block title %}Task Management System{% endblock %}
 {% block content %}
-  <h1>Welcome to the Task Management System</h1>
-  <p>Manage your tasks efficiently and effectively.</p>
-  <p>This is a Josh Peterson Project</p>
+  <div class="landing-container">
+    <h1>Welcome to the Task Management System</h1>
+    <p>Manage your tasks efficiently and effectively.</p>
+    <img src="{% static 'images/landing-image.png' %}" alt="Task Management" class="landing-image">
+    
+    <div class="cta-buttons">
+      <a href="{% url 'login' %}" class="btn btn-login">Login</a>
+      <a href="{% url 'signup' %}" class="btn btn-signup">Sign Up</a>
+    </div>
+    
+    <section class="features">
+      <h2>Features</h2>
+      <div class="feature">
+        <img src="{% static 'images/feature1-icon.png' %}" alt="Feature 1">
+        <h3>Organize Your Tasks</h3>
+        <p>Keep all your tasks in one place and never miss a deadline.</p>
+      </div>
+      <div class="feature">
+        <img src="{% static 'images/feature2-icon.png' %}" alt="Feature 2">
+        <h3>Collaborate with Others</h3>
+        <p>Share your tasks with team members for collaborative work.</p>
+        <p>Coming Soon!</p>
+      </div>
+      <!-- More features can be added here -->
+    </section>
+  </div>
+  <p class="footer">This is a Josh Peterson Project</p>
 {% endblock %}
