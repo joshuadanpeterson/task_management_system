@@ -20,6 +20,4 @@ jobs:
       run: docker build . --file Dockerfile --tag portfolio-project
 
     - name: Run tests
-      run: docker run portfolio-project python manage.py test
-
-    # You can add additional steps here for deployment, notifications, or other actions
+      run: docker run -e DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }} portfolio-project python manage.py test
