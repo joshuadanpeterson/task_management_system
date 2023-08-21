@@ -12,6 +12,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_DB: ${{ secrets.DB_NAME }}
+          POSTGRES_USER: ${{ secrets.DB_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -20,4 +31,4 @@ jobs:
       run: docker build . --file Dockerfile --tag portfolio-project
 
     - name: Run tests
-      run: docker run -e DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }} -e DB_NAME=${{ secrets.DB_NAME }} -e DB_USER=${{ secrets.DB_USER }} -e DB_PASSWORD=${{ secrets.DB_PASSWORD }} portfolio-project python manage.py test
+      run: docker run -e DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }} -e DB_NAME=${{ secrets.DB_NAME }} -e DB_USER=${{ secrets.DB_USER }} -e DB_PASSWORD=${{ secrets.DB_PASSWORD }} -e DB_HOST=postgres -e DB_PORT=5432 portfolio-project python manage.py test
