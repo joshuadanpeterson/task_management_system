@@ -21,14 +21,32 @@ jobs:
           POSTGRES_PASSWORD: ${{ secrets.DB_PASSWORD }}
         ports:
           - 5432:5432
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+        options: >-
+          --network github_actions
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Create Docker network
+      run: docker network create github_actions
+
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag portfolio-project
 
     - name: Run tests
-      run: docker run -e DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }} -e DB_NAME=${{ secrets.DB_NAME }} -e DB_USER=${{ secrets.DB_USER }} -e DB_PASSWORD=${{ secrets.DB_PASSWORD }} -e DB_HOST=postgres -e DB_PORT=5432 portfolio-project python manage.py test
+      run: >-
+        docker run
+        --network github_actions
+        -e DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }}
+        -e DB_NAME=${{ secrets.DB_NAME }}
+        -e DB_USER=${{ secrets.DB_USER }}
+        -e DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+        -e DB_HOST=postgres
+        -e DB_PORT=5432
+        portfolio-project
+        python manage.py test
