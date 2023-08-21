@@ -20,4 +20,4 @@ jobs:
       run: docker build . --file Dockerfile --tag portfolio-project
 
     - name: Run tests
-      run: docker run -e DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }} portfolio-project python manage.py test
+      run: docker run -e DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }} -e DB_NAME=${{ secrets.DB_NAME }} -e DB_USER=${{ secrets.DB_USER }} -e DB_PASSWORD=${{ secrets.DB_PASSWORD }} portfolio-project python manage.py test
