@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+
 from pathlib import Path
 from decouple import config
 import os
@@ -77,11 +78,7 @@ WSGI_APPLICATION = 'task_management_system.wsgi.application'
 # Database settings for PostgreSQL with Docker
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if os.environ.get('USE_DOCKER', 'no') == 'yes':
-    db_host = 'db'  # Docker container name
-else:
-    db_host = 'localhost'  # Or the correct address for local PostgreSQL
-
+db_host = 'db' if os.environ.get('USE_DOCKER', 'no') == 'yes' else 'localhost'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -142,4 +139,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Fix Successful Login Test
 # https://stackoverflow.com/questions/63194936/django-3-1-1-unit-test-fails-with-assertionerror-404-not-found-not-logged-in
 LOGIN_REDIRECT_URL = 'task_list'
-

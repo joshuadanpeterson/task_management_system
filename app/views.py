@@ -47,6 +47,7 @@ def landing_page(request):
 # The function 'task_list' renders the task list for the application.
 @login_required
 def task_list(request):
+    # pylint: disable=no-member
     tasks = Task.objects.filter(user=request.user)
     return render(request, 'tasks/task_list.html', {'tasks': tasks})
 
