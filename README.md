@@ -33,6 +33,7 @@ cd path_to_directory
 ```bash
 docker-compose build
 docker-compose up -d
+docker compose exec web python manage.py migrate
 ```
 
 The application should now be accessible at `http://localhost:8000/`.
